@@ -58,7 +58,7 @@
             color: <?= e($theme['tabText']) ?>;
             border-bottom-color: <?= e($theme['tabText']) ?>;
         }
-        .content { padding: 14px; max-width: 900px; margin: 0 auto; }
+        .content { padding: 14px; max-width: 900px; margin: 0 auto; flex: 1; overflow-y: auto; width: 100%; }
         .diagram-wrap {
             flex: 1; overflow: hidden; position: relative; cursor: grab;
             user-select: none; -webkit-user-select: none;
@@ -104,8 +104,8 @@
 <div class="tabs">
     <?php
     $tabLabels = $lang === 'en'
-        ? ['diagram' => '⬡ Pathways', 'diseases' => '⚕ Diseases & Biologics', 'detail' => '◉ Detail', 'sources' => '📚 Sources']
-        : ['diagram' => '⬡ Signalwege', 'diseases' => '⚕ Erkrankungen & Biologika', 'detail' => '◉ Detail', 'sources' => '📚 Quellen'];
+        ? ['diagram' => '⬡ Pathways', 'diseases' => '⚕ Diseases & Biologics', 'sources' => '📚 Sources']
+        : ['diagram' => '⬡ Signalwege', 'diseases' => '⚕ Erkrankungen & Biologika', 'sources' => '📚 Quellen'];
     if ($info) {
         $short = mb_substr($info['title'], 0, 22);
         $tabLabels['detail'] = "◉ {$short}…";

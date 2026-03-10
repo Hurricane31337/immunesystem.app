@@ -293,7 +293,7 @@ $isDark = ($theme === THEME_DARK);
     let vx, vy, vw, vh;
 
     function fitInitial() {
-        const ZOOM = 1.36;
+        const ZOOM = 1.0;
         const wrapRect = wrap.getBoundingClientRect();
         const aspect = wrapRect.width / wrapRect.height;
         const contentAspect = CW / CH;
