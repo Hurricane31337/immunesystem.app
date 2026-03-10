@@ -59,7 +59,7 @@
         }
         .content { padding: 14px; max-width: 900px; margin: 0 auto; }
         .diagram-wrap { padding: 6px 4px; overflow-x: auto; }
-        .diagram-wrap svg { width: 100%; min-width: 1000px; display: block; }
+        .diagram-wrap svg { width: 100%; max-width: 1120px; display: block; }
         .disease-card {
             margin-bottom: 10px; padding: 14px; border-radius: 8px; cursor: pointer;
         }
@@ -88,7 +88,7 @@
         <?= e(LANGUAGES[$nextLang]['flag']) ?>
     </a>
     <a href="<?= e(url(['dark' => $dark ? '0' : '1'])) ?>" class="theme-toggle" onclick="document.cookie='theme=<?= $dark ? 'light' : 'dark' ?>;path=/';return true;">
-        <?= e($theme['toggleIcon']) ?>
+        <?= $theme['toggleIcon'] ?>
     </a>
     <h1><?= $lang === 'en' ? 'Immune System · Signaling Pathways · Autoimmune Diseases' : 'Immunsystem · Signalwege · Autoimmunerkrankungen' ?></h1>
     <p><?= $lang === 'en'

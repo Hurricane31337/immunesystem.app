@@ -5,9 +5,9 @@ declare(strict_types=1);
 require_once __DIR__ . '/config.php';
 require_once __DIR__ . '/functions.php';
 
-$lang = $_GET['lang'] ?? 'de';
+$lang = $_GET['lang'] ?? 'en';
 if (!isset(LANGUAGES[$lang])) {
-    $lang = 'de';
+    $lang = 'en';
 }
 
 $tab = $_GET['tab'] ?? 'diagram';
