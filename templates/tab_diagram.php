@@ -7,8 +7,8 @@ $R = $rows;
 $diseases = get_diagram_diseases($lang);
 $isDark = ($theme === THEME_DARK);
 ?>
-<div class="diagram-wrap">
-<svg viewBox="0 0 1120 700">
+<div class="diagram-wrap" id="diagram-canvas">
+<svg id="diagram-svg" viewBox="0 0 1120 700" preserveAspectRatio="xMidYMid meet">
     <defs>
         <marker id="ad" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
             <path d="M0,0 L8,3 L0,6" fill="<?= e($theme['svgArrow']) ?>" fill-opacity=".8"/>
@@ -280,3 +280,164 @@ $isDark = ($theme === THEME_DARK);
     </g>
 </svg>
 </div>
+
+<script>
+(function() {
+    const svg = document.getElementById('diagram-svg');
+    const wrap = document.getElementById('diagram-canvas');
+    if (!svg || !wrap) return;
+
+    // Original content bounds
+    const CW = 1120, CH = 700;
+    // viewBox state
+    let vx, vy, vw, vh;
+
+    function fitInitial() {
+        // Show content at 150% size (viewBox smaller = content appears larger)
+        const wrapRect = wrap.getBoundingClientRect();
+        const aspect = wrapRect.width / wrapRect.height;
+        const contentAspect = CW / CH;
+
+        if (aspect > contentAspect) {
+            // Container is wider than content → height-constrained
+            vh = CH / 1.5;
+            vw = vh * aspect;
+        } else {
+            // Container is taller → width-constrained
+            vw = CW / 1.5;
+            vh = vw / aspect;
+        }
+        // Center on the content
+        vx = (CW - vw) / 2;
+        vy = (CH - vh) / 2;
+        applyViewBox();
+    }
+
+    function applyViewBox() {
+        svg.setAttribute('viewBox', vx + ' ' + vy + ' ' + vw + ' ' + vh);
+    }
+
+    function svgPoint(clientX, clientY) {
+        // Convert screen coords to SVG viewBox coords
+        const rect = wrap.getBoundingClientRect();
+        return {
+            x: vx + (clientX - rect.left) / rect.width * vw,
+            y: vy + (clientY - rect.top) / rect.height * vh
+        };
+    }
+
+    // --- Zoom ---
+    wrap.addEventListener('wheel', function(e) {
+        e.preventDefault();
+        const factor = e.deltaY > 0 ? 1.1 : 1 / 1.1;
+        const pt = svgPoint(e.clientX, e.clientY);
+
+        const newVw = vw * factor;
+        const newVh = vh * factor;
+        // Zoom toward cursor
+        vx = pt.x - (pt.x - vx) * factor;
+        vy = pt.y - (pt.y - vy) * factor;
+        vw = newVw;
+        vh = newVh;
+        applyViewBox();
+    }, { passive: false });
+
+    // --- Pan ---
+    let dragging = false, dragStart, dragLink = false;
+
+    wrap.addEventListener('mousedown', function(e) {
+        // Allow link clicks: only pan on left button without a link target
+        if (e.button !== 0) return;
+        dragging = true;
+        dragLink = false;
+        dragStart = { x: e.clientX, y: e.clientY, vx: vx, vy: vy };
+        wrap.classList.add('grabbing');
+    });
+
+    window.addEventListener('mousemove', function(e) {
+        if (!dragging) return;
+        const dx = e.clientX - dragStart.x;
+        const dy = e.clientY - dragStart.y;
+        if (Math.abs(dx) > 3 || Math.abs(dy) > 3) dragLink = true;
+        const rect = wrap.getBoundingClientRect();
+        vx = dragStart.vx - dx / rect.width * vw;
+        vy = dragStart.vy - dy / rect.height * vh;
+        applyViewBox();
+    });
+
+    window.addEventListener('mouseup', function() {
+        if (dragging) {
+            dragging = false;
+            wrap.classList.remove('grabbing');
+        }
+    });
+
+    // Prevent link navigation when dragging
+    svg.addEventListener('click', function(e) {
+        if (dragLink) {
+            e.preventDefault();
+            e.stopPropagation();
+            dragLink = false;
+        }
+    }, true);
+
+    // --- Touch support ---
+    let lastTouchDist = 0;
+
+    wrap.addEventListener('touchstart', function(e) {
+        if (e.touches.length === 1) {
+            dragging = true;
+            dragLink = false;
+            dragStart = { x: e.touches[0].clientX, y: e.touches[0].clientY, vx: vx, vy: vy };
+        } else if (e.touches.length === 2) {
+            dragging = false;
+            lastTouchDist = Math.hypot(
+                e.touches[1].clientX - e.touches[0].clientX,
+                e.touches[1].clientY - e.touches[0].clientY
+            );
+        }
+    }, { passive: true });
+
+    wrap.addEventListener('touchmove', function(e) {
+        e.preventDefault();
+        if (e.touches.length === 1 && dragging) {
+            const dx = e.touches[0].clientX - dragStart.x;
+            const dy = e.touches[0].clientY - dragStart.y;
+            if (Math.abs(dx) > 3 || Math.abs(dy) > 3) dragLink = true;
+            const rect = wrap.getBoundingClientRect();
+            vx = dragStart.vx - dx / rect.width * vw;
+            vy = dragStart.vy - dy / rect.height * vh;
+            applyViewBox();
+        } else if (e.touches.length === 2) {
+            const dist = Math.hypot(
+                e.touches[1].clientX - e.touches[0].clientX,
+                e.touches[1].clientY - e.touches[0].clientY
+            );
+            const midX = (e.touches[0].clientX + e.touches[1].clientX) / 2;
+            const midY = (e.touches[0].clientY + e.touches[1].clientY) / 2;
+            const factor = lastTouchDist / dist;
+            const pt = svgPoint(midX, midY);
+            vx = pt.x - (pt.x - vx) * factor;
+            vy = pt.y - (pt.y - vy) * factor;
+            vw *= factor;
+            vh *= factor;
+            applyViewBox();
+            lastTouchDist = dist;
+        }
+    }, { passive: false });
+
+    wrap.addEventListener('touchend', function() {
+        dragging = false;
+    }, { passive: true });
+
+    // --- Double-click to reset ---
+    wrap.addEventListener('dblclick', function(e) {
+        e.preventDefault();
+        fitInitial();
+    });
+
+    // Initialize
+    fitInitial();
+    window.addEventListener('resize', fitInitial);
+})();
+</script>

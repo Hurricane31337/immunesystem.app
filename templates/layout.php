@@ -6,8 +6,9 @@
     <title><?= $lang === 'en' ? 'Immune System · Signaling Pathways · Autoimmune Diseases' : 'Immunsystem · Signalwege · Autoimmunerkrankungen' ?></title>
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; }
+        html, body { height: 100%; }
         body {
-            min-height: 100vh;
+            display: flex; flex-direction: column;
             background: <?= e($theme['bg']) ?>;
             font-family: 'Segoe UI', system-ui, sans-serif;
             color: <?= e($theme['text']) ?>;
@@ -58,8 +59,12 @@
             border-bottom-color: <?= e($theme['tabText']) ?>;
         }
         .content { padding: 14px; max-width: 900px; margin: 0 auto; }
-        .diagram-wrap { padding: 6px 4px; overflow-x: auto; }
-        .diagram-wrap svg { width: 100%; max-width: 1120px; display: block; }
+        .diagram-wrap {
+            flex: 1; overflow: hidden; position: relative; cursor: grab;
+            user-select: none; -webkit-user-select: none;
+        }
+        .diagram-wrap.grabbing { cursor: grabbing; }
+        .diagram-wrap svg { width: 100%; height: 100%; display: block; }
         .disease-card {
             margin-bottom: 10px; padding: 14px; border-radius: 8px; cursor: pointer;
         }
