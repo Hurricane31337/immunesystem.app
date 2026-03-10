@@ -1,0 +1,27 @@
+---
+title: Rheumatoide Arthritis (chronische Gelenkentzündung)
+category: Erkrankung
+color: "#cc6622"
+---
+
+Rheumatoide Arthritis (RA) ist eine chronische Autoimmunerkrankung, die vor allem die Gelenke betrifft — typischerweise symmetrisch die kleinen Gelenke der Hände und Füße. Etwa 0,5–1% der Weltbevölkerung ist betroffen, Frauen zwei- bis dreimal häufiger als Männer. Ohne Behandlung führt RA zur fortschreitenden Zerstörung von Gelenkknorpel und Knochen mit Deformitäten und Funktionsverlust.
+
+Die Pathogenese (Krankheitsentstehung) verläuft in drei Phasen:
+
+**Phase 1 — Initiation**: Genetische Veranlagung (besonders das HLA-DR4-Gen) zusammen mit Umweltfaktoren (Rauchen ist der stärkste bekannte Risikofaktor, auch Parodontitis spielt eine Rolle) führen dazu, dass bestimmte körpereigene Proteine chemisch verändert werden (Citrullinierung). Das Immunsystem erkennt diese veränderten Proteine als „fremd" und bildet Autoantikörper dagegen: ACPA (Anti-Citrullinated Protein Antibodies) und Rheumafaktor (RF). Diese Autoantikörper können Jahre vor den ersten Gelenkbeschwerden im Blut nachweisbar sein.
+
+**Phase 2 — Amplifikation**: Dendritische Zellen präsentieren die citrullinierten Peptide an T-Zellen in den Lymphknoten → T-Zell-Aktivierung → T-Helferzellen unterstützen B-Zellen bei der Antikörperproduktion → mehr Autoantikörper. T-Zellen, B-Zellen, Makrophagen und andere Immunzellen infiltrieren die Gelenkinnenhaut (Synovialmembran).
+
+**Phase 3 — Destruktion**: Die infiltrierten Makrophagen produzieren massiv TNF-α, IL-1β und IL-6. Diese Zytokine aktivieren die Fibroblasten-ähnlichen Synoviozyten (FLS), die sich zu einem aggressiven, tumorartigen Gewebe namens Pannus entwickeln. Der Pannus wächst in den Gelenkknorpel und den Knochen ein. FLS produzieren Matrix-Metalloproteinasen (MMPs), die den Knorpel enzymatisch abbauen, und RANKL, das Osteoklasten (Knochenfresszellen) aktiviert und Knochenerosionen verursacht. IL-17 von Th17-Zellen verstärkt über den Signalvermittler IκBζ synergistisch die TNF-α-Wirkung auf FLS, was die IL-6-Produktion massiv steigert. IL-6 wiederum wirkt über den JAK1/JAK2 → STAT3-Weg und fördert FLS-Proliferation, RANKL-Expression und die Produktion von CRP (C-reaktives Protein, ein Entzündungsmarker) in der Leber.
+
+**Biologika-Therapie bei RA**: TNF-α-Inhibitoren (Infliximab, Adalimumab, Etanercept etc.) sind typischerweise die erste Biologika-Wahl nach Versagen von Methotrexat. Tocilizumab und Sarilumab (Anti-IL-6-Rezeptor) blockieren das IL-6-trans-Signaling. Rituximab (Anti-CD20) wird nach TNF-Versagen eingesetzt. Abatacept (CTLA4-Ig, ein Fusionsprotein) blockiert die T-Zell-Co-Stimulation. Anakinra (IL-1-Rezeptor-Antagonist) ist weniger effektiv als Anti-TNF.
+
+**JAK-Inhibitoren** bieten als orale Medikamente eine Alternative zu den injizierbaren Biologika: Tofacitinib (JAK1/3), Baricitinib (JAK1/2), Upadacitinib (JAK1-selektiv) und Peficitinib (in Japan zugelassen). Upadacitinib (JAK1-selektiv) wirkt bei RA, weil JAK1 an den Signalwegen von IL-6 (JAK1/JAK2), IFN-γ (JAK1/JAK2) und mehreren γc-Zytokinen (JAK1/JAK3) beteiligt ist — eine JAK1-Blockade unterbricht also gleichzeitig die IL-6-vermittelte FLS-Aktivierung, die IFN-γ-vermittelte Makrophagenaktivierung und die T-Zell-Proliferation.
+
+Ein besonderer klinischer Zusammenhang: RA ist die häufigste Grunderkrankung bei paradoxer Psoriasis unter Anti-TNF-Therapie (45% der Fälle). Das bedeutet, dass Rheumatologen besonders aufmerksam sein müssen, wenn RA-Patienten unter Anti-TNF-Therapie Hautveränderungen entwickeln.
+
+**Beteiligung großer Gelenke** (Ellenbogen, Knie, Schulter, Hüfte): Obwohl RA typischerweise in den kleinen Gelenken beginnt, werden im Krankheitsverlauf auch große Gelenke betroffen — am häufigsten Handgelenk und Sprunggelenk, gefolgt von Knie, Ellenbogen und Hüfte. Studien aus der ERAS-Kohorte (Early Rheumatoid Arthritis Study) zeigen, dass der Bewegungsumfang in allen großen Gelenken über die Jahre um etwa 7–13% pro Jahr abnimmt. Interessanterweise schreitet die Schädigung großer Gelenke unabhängig vom Rheumafaktor-Status fort — sowohl RF-positive als auch RF-negative Patienten sind gleichermaßen betroffen. Immunologisch liegt in großen und kleinen Gelenken ein vergleichbares Synovialmuster vor: vergleichbare Zahlen von Makrophagen, T-Zellen und Fibroblasten, aber mechanische Belastungsunterschiede können den Knorpelabbau in großen Gelenken beschleunigen.
+
+**RA und Sjögren-Syndrom** — häufige Überlappung: Etwa 5–10% der RA-Patienten (manche Studien berichten bis zu 30%) entwickeln ein sekundäres Sjögren-Syndrom mit trockenen Augen und trockenem Mund. Umgekehrt haben über 50% der Sjögren-Patienten Gelenkschmerzen. Der Unterschied: Beim primären Sjögren-Syndrom verursacht die Gelenkbeteiligung typischerweise Schmerzen und Steifigkeit ohne die für RA charakteristische erosive Zerstörung — es fehlt der aggressive Pannus. Die Gelenkbeteiligung beim Sjögren betrifft ähnliche Gelenke (Hände, Handgelenke, Knie), führt aber nicht zu Deformitäten. Immunologisch ist beim Sjögren die B-Zell-Hyperaktivität (BAFF-getrieben, IFN-α-Signatur) dominanter, während bei RA die TNF-α/IL-6/IL-17-getriebene FLS-Aktivierung mit Pannusbildung und Knochenerosion im Vordergrund steht. Therapeutisch werden bei sekundärem Sjögren oft die RA-Medikamente (Anti-TNF, JAK-Inhibitoren) beibehalten und um feuchtigkeitsspendende Maßnahmen (Augentropfen, Speichelersatz) ergänzt.
+
+Quellen: Kraan et al., Arthritis Rheum 2002; Norton et al., Rheumatol Int 2022; He et al., Rheumatology 2013; StatPearls RA 2023

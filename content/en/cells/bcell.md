@@ -1,0 +1,15 @@
+---
+title: B Cells and Plasma Cells (Antibody Factories)
+category: Cell
+color: "#9944cc"
+---
+
+B cells are the cells of the immune system that produce antibodies (immunoglobulins) — Y-shaped proteins that mark, neutralize, or activate the complement system (a cascade of defense proteins in the blood) against pathogens. B cells mature in the bone marrow and are activated in the lymph nodes by T helper cells. They can then develop into plasma cells (specialized "antibody factories" that secrete large amounts of antibodies) or memory B cells (which respond faster to a repeat infection).
+
+Various signaling molecules control B-cell behavior through different pathways: IL-4 and IL-13 (from Th2 cells, signaling via JAK1/JAK3 → STAT6) trigger the so-called "isotype switch" to IgE — the antibody type involved in allergies and asthma. IL-6 (signaling via JAK1/JAK2 → STAT3) promotes development into plasma cells. IL-21 (from Th17 and follicular T helper cells, signaling via JAK1/JAK3 → STAT3) drives the germinal center reaction — the site where antibodies are "perfected." **BAFF** (B-cell activating factor, signaling via NF-κB) is a survival signal without which B cells die. T-cell help occurs through CD40-CD40L interaction.
+
+In rheumatoid arthritis, B cells produce misdirected autoantibodies: **Rheumatoid factor (RF)** and **anti-CCP antibodies (ACPA**, antibodies against citrullinated proteins). These autoantibodies form immune complexes that activate the complement system and damage tissue. Additionally, B cells directly activate joint fibroblasts (FLS) via TNF-α.
+
+In Sjögren's syndrome, the B-cell problem is particularly pronounced: Elevated BAFF levels (produced by glandular epithelial cells and immune cells) promote pathological proliferation of marginal zone B cells. These form so-called ectopic germinal centers directly in the salivary glands — sites where autoantibodies (anti-SSA/Ro, anti-SSB/La) are produced. About 5% of Sjögren's patients develop a MALT lymphoma (a cancer of lymphatic tissue) from this chronic B-cell stimulation.
+
+Therapeutically, there are several approaches: **Rituximab** is an antibody against CD20, a molecule on the surface of most B cells. It destroys B cells through three mechanisms: antibody-dependent cell toxicity (ADCC), complement-dependent cell toxicity (CDC), and direct signaling. In Sjögren's syndrome, the response rate is only about 50%. One reason is the **BAFF paradox**: After rituximab-induced B-cell depletion, BAFF levels in the blood paradoxically increase (because fewer B cells are present to "consume" BAFF), accelerating B-cell repopulation. Additionally, long-lived plasma cells do not express CD20, so they are not affected by rituximab and continue to produce autoantibodies. The combination of **Belimumab** (anti-BAFF) with rituximab addresses both problems: rituximab depletes existing B cells, and belimumab prevents accelerated repopulation through BAFF blockade. **Ianalumab** (anti-BAFF receptor plus ADCC) is a newer approach that showed promising results in phase II studies for Sjögren's syndrome.

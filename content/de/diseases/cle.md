@@ -1,0 +1,11 @@
+---
+title: Kutaner Lupus erythematodes (CLE)
+category: Erkrankung
+color: "#bb55bb"
+---
+
+Kutaner Lupus erythematodes (CLE) umfasst eine Gruppe von Lupus-Manifestationen, die primär die Haut betreffen — mit oder ohne systemische Beteiligung. Es gibt drei Hauptformen: **Diskoider Lupus erythematodes (DLE)** verursacht scheibenförmige, vernarbende Läsionen, besonders an lichtexponierten Stellen, und kann zu dauerhaftem Haarverlust führen. **Subakut-kutaner Lupus erythematodes (SCLE)** zeigt symmetrische, nicht-vernarbende, ringförmige oder papulosquamöse Läsionen an sonnenexponierten Arealen; er ist stark mit Anti-SSA/Ro-Antikörpern assoziiert und kann medikamentös ausgelöst werden. **Akut-kutaner Lupus erythematodes** zeigt das klassische Schmetterlingsexanthem und ist fast immer mit SLE assoziiert.
+
+Immunologisch spielt die Typ-I-IFN-Achse eine Schlüsselrolle: UV-Licht schädigt Keratinozyten → Freisetzung von Nukleinsäuren und Alarminen → Aktivierung von pDC in der Haut → IFN-α-Produktion → Rekrutierung zytotoxischer T-Zellen und Aktivierung des angeborenen Immunsystems. Der Signalweg verläuft über JAK1/TYK2 → STAT1/STAT2. Bei SCLE sind Anti-SSA/Ro-Antikörper pathogenetisch relevant: Sie binden an apoptotische Keratinozyten, die unter UV-Einfluss SSA/Ro-Antigen an die Oberfläche verlagern, und aktivieren Komplementkaskade und Entzündung. SCLE kann auch durch Medikamente ausgelöst werden, die die IFN-Antwort verstärken — darunter paradoxerweise Anti-TNF-Medikamente.
+
+Therapeutisch: Lichtschutz ist essentiell. Hydroxychloroquin ist die Erstlinientherapie. **Anifrolumab** (Anti-IFNAR) hat in den TULIP-Studien besonders starke Verbesserungen der Hautmanifestationen gezeigt (gemessen am CLASI-Score). **Belimumab** kann bei begleitendem SLE helfen. **TYK2-Inhibitoren** (Deucravacitinib) werden bei CLE untersucht und könnten durch Blockade des IFN-α-Signalwegs wirksam sein. **JAK-Inhibitoren** (Baricitinib, Upadacitinib) zeigen in Fallberichten und kleinen Studien Wirksamkeit.

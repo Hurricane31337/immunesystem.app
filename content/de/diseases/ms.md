@@ -1,0 +1,11 @@
+---
+title: Multiple Sklerose (MS)
+category: Erkrankung
+color: "#4477aa"
+---
+
+Multiple Sklerose (MS) ist eine chronisch-entzündliche Erkrankung des zentralen Nervensystems (Gehirn und Rückenmark), bei der das Immunsystem die Myelinscheiden (die isolierenden Hüllen der Nervenfasern) angreift. Dies führt zu Entmarkungsherden (Plaques), die die Nervenleitung stören. Symptome sind vielfältig: Sehstörungen, Taubheitsgefühle, Muskelschwäche, Koordinationsprobleme, Müdigkeit und kognitive Einschränkungen. MS betrifft etwa 2,8 Millionen Menschen weltweit, Frauen zwei- bis dreimal häufiger.
+
+Immunologisch spielen sowohl Th1-Zellen (IFN-γ, über JAK1/JAK2 → STAT1) als auch Th17-Zellen (IL-17, über IL-23/JAK2/TYK2 → STAT3) eine zentrale Rolle: Sie wandern über die Blut-Hirn-Schranke ins ZNS ein und greifen dort Oligodendrozyten (die Myelin-produzierenden Zellen) an. B-Zellen spielen ebenfalls eine überraschend wichtige Rolle — sie produzieren Autoantikörper gegen Myelinbestandteile, fungieren als Antigen-präsentierende Zellen für T-Zellen und produzieren proinflammatorische Zytokine. Die Erkenntnis, dass B-Zell-Depletion hochwirksam bei MS ist, hat das Verständnis der Krankheit revolutioniert.
+
+**Biologika und Immuntherapien**: **Anti-CD20** (Ocrelizumab, Ofatumumab) sind die wirksamsten Biologika bei schubförmiger und primär progredienter MS — sie depletieren B-Zellen und sind Standardtherapie. **Natalizumab** (Anti-α4-Integrin) blockiert die Einwanderung von Immunzellen ins ZNS — hochwirksam, aber mit PML-Risiko (progressive multifokale Leukenzephalopathie). Alemtuzumab (Anti-CD52) depletiert Lymphozyten breit. Interferone (IFN-β) waren historisch die erste MS-Therapie; sie modulieren die Immunantwort über JAK1/TYK2 → STAT1/STAT2 — interessanterweise FÖRDERT IFN-β bei MS die Immunregulation, während IFN-α bei SLE schädlich ist. **S1P-Modulatoren** (Fingolimod, Siponimod, Ozanimod) halten Lymphozyten in den Lymphknoten zurück. Cladribin depletiert selektiv Lymphozyten. Bruton-Tyrosinkinase-Inhibitoren (BTKi, z.B. Tolebrutinib) werden derzeit in Phase-III-Studien getestet und könnten als erste orale Therapie auch die ZNS-resident B-Zellen erreichen.

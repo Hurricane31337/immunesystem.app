@@ -1,0 +1,19 @@
+---
+title: Psoriasis — klassisch vs. paradox
+category: Erkrankung
+color: "#dd5500"
+---
+
+Psoriasis (Schuppenflechte) ist eine chronisch-entzündliche Hauterkrankung, die etwa 2–3% der Bevölkerung betrifft. Charakteristisch sind scharf begrenzte, gerötete, schuppende Plaques — am häufigsten an Ellbogen, Knien, Kopfhaut und Gesäßfalte. Die Krankheit ist NICHT ansteckend, sondern autoimmun bedingt.
+
+**KLASSISCHE PSORIASIS** — der immunologische Ablauf:
+
+Die Krankheit beginnt typischerweise nach einem Auslöser (Hautverletzung, Infektion, Stress): Geschädigte oder gestresste Keratinozyten (Hautzellen) setzen antimikrobielle Peptide (AMPs) frei, insbesondere LL-37. Diese AMPs bilden Komplexe mit DNA und RNA aus absterbenden Zellen. Diese Komplexe aktivieren plasmazytoide dendritische Zellen (pDC), die daraufhin große Mengen IFN-α (Interferon-alpha) produzieren — das ist die Frühphase. IFN-α aktiviert konventionelle dendritische Zellen (cDC), die daraufhin zwei entscheidende Botenstoffe freisetzen: TNF-α und IL-23. TNF-α hat jetzt eine doppelte Funktion: Es fördert die Entzündung, sorgt aber gleichzeitig dafür, dass die pDC ausreifen und ihre IFN-α-Produktion einstellen — ein negativer Feedback-Mechanismus, der die IFN-α-Phase zeitlich begrenzt. IL-23 stabilisiert und vermehrt Th17-Zellen, die IL-17A, IL-17F und IL-22 produzieren. IL-17 wirkt auf Keratinozyten: Es aktiviert über ACT1 → NF-κB die Produktion von Chemokinen (CXCL1, CXCL8 → Neutrophilenrekrutierung) und AMPs. IL-22 regt über STAT3 die Keratinozytenproliferation an → epidermale Verdickung (Akanthose). Die neutrophilen Granulozyten, die in die verdickte Epidermis einwandern, bilden die typischen Munro-Mikroabszesse. Da die proliferierenden Keratinozyten wiederum AMPs produzieren, entsteht eine positive Feedbackschleife, die die Krankheit chronifiziert.
+
+**PARADOXE PSORIASIS** — der „Gegenläufer":
+
+Paradoxe Psoriasis entsteht als Nebenwirkung von Anti-TNF-Medikamenten — also genau den Medikamenten, die eigentlich zur Behandlung von Psoriasis eingesetzt werden. Sie betrifft 2–5% der mit Anti-TNF behandelten Patienten. Die häufigste Grunderkrankung ist die rheumatoide Arthritis (45,3% der Fälle), und der häufigste Auslöser ist Infliximab (62,3%), gefolgt von Adalimumab und Etanercept.
+
+Der Mechanismus: Die TNF-α-Blockade hebt den oben beschriebenen negativen Feedback auf — die pDC können nicht mehr ausreifen → unkontrollierte, anhaltende IFN-α-Produktion. Da auch die cDC ohne TNF-α nicht voll reifen können, kommt es NICHT zu der üblichen T-Zell-vermittelten Autoimmunreaktion. Paradoxe Psoriasis ist also eine IFN-α-getriebene Entzündung des angeborenen Immunsystems — OHNE T-Zell-Beteiligung. Histologisch zeigen paradoxe Läsionen mehr Mastzellen, mehr Eosinophile und mehr pDC, aber WENIGER T-Zellen als klassische Psoriasis-Läsionen. Klinisch manifestiert sie sich am häufigsten als palmoplantare Pustulose (Pusteln an Handflächen/Fußsohlen), gefolgt von Plaque- und Guttata-Formen. Genetische Risikofaktoren umfassen Polymorphismen im IL-23-Rezeptor-Gen und einen TNF-α-Promotor-SNP (rs1799964).
+
+**Therapie der paradoxen Psoriasis**: Bei leichten Fällen kann man versuchen, mit topischen Steroiden und Vitamin-D-Analoga „durchzubehandeln" (treat through) und das Anti-TNF fortzusetzen. Bei schweren Fällen muss das Anti-TNF abgesetzt und auf einen anderen Wirkmechanismus umgestellt werden: Ustekinumab (Anti-IL-12/23), Anti-IL-23-Antikörper, Anti-IL-17-Antikörper oder JAK-Inhibitoren kommen infrage. Der Wechsel auf ein anderes Anti-TNF-Medikament wird NICHT empfohlen, da häufig eine kumulative Verschlechterung beobachtet wird.
