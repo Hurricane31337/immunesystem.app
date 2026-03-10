@@ -92,7 +92,7 @@
     <a href="<?= e(url(['lang' => $nextLang])) ?>" class="lang-toggle">
         <?= e(LANGUAGES[$nextLang]['flag']) ?>
     </a>
-    <a href="<?= e(url(['dark' => $dark ? '0' : '1'])) ?>" class="theme-toggle" onclick="document.cookie='theme=<?= $dark ? 'light' : 'dark' ?>;path=/';return true;">
+    <a href="<?= e(url(['dark' => $dark ? '0' : '1'])) ?>" class="theme-toggle" data-target-theme="<?= $dark ? 'light' : 'dark' ?>">
         <?= $theme['toggleIcon'] ?>
     </a>
     <h1><?= $lang === 'en' ? 'Immune System · Signaling Pathways · Autoimmune Diseases' : 'Immunsystem · Signalwege · Autoimmunerkrankungen' ?></h1>
@@ -129,8 +129,8 @@
 // Theme toggle via cookie (no page reload needed for subsequent visits)
 document.querySelector('.theme-toggle')?.addEventListener('click', function(e) {
     e.preventDefault();
-    const isDark = document.cookie.includes('theme=dark');
-    document.cookie = 'theme=' + (isDark ? 'light' : 'dark') + ';path=/;max-age=31536000';
+    var target = this.getAttribute('data-target-theme');
+    document.cookie = 'theme=' + target + ';path=/;max-age=31536000';
     location.reload();
 });
 </script>

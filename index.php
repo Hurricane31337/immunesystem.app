@@ -22,7 +22,7 @@ if ($tab === 'detail' && !$info) {
 }
 
 $theme = $dark ? THEME_DARK : THEME_LIGHT;
-$columns = get_columns();
+$columns = get_columns($lang);
 $rows = get_rows();
 
 include __DIR__ . '/templates/layout.php';

@@ -124,20 +124,21 @@ function url(array $params): string
 /**
  * Get column layout data for the SVG diagram.
  */
-function get_columns(): array
+function get_columns(string $lang = 'en'): array
 {
+    $en = $lang === 'en';
     return [
-        ['x' => 80, 'cells' => 'Makrophage', 'icon' => "\xF0\x9F\x94\xAC", 'cyt' => 'TNF-\u03B1', 'rec' => 'TNFR1/2', 'jak' => "TRAF2\u2192IKK", 'stat' => "NF-\u03BAB", 'target' => 'FLS / Synovium', 'drug' => "Anti-TNF-\u03B1", 'dsub' => 'Infliximab etc.', 'cc' => '#ff4444', 'ck' => 'tnf_pathway', 'cellKey' => 'macrophage'],
-        ['x' => 175, 'cells' => 'cDC', 'icon' => "\xF0\x9F\x8C\x9F", 'cyt' => 'IL-12', 'rec' => "IL-12R\u03B21/\u03B22", 'jak' => 'JAK2 + TYK2', 'stat' => 'STAT4', 'target' => 'Th1-Differenz.', 'drug' => 'Ustekinumab', 'dsub' => 'Anti-IL-12/23', 'cc' => '#ffaa00', 'ck' => 'tyk2', 'cellKey' => 'dc'],
-        ['x' => 270, 'cells' => null, 'icon' => null, 'cyt' => 'IL-23', 'rec' => "IL-23R/12R\u03B21", 'jak' => 'JAK2 + TYK2', 'stat' => 'STAT3/4', 'target' => 'Th17-Expansion', 'drug' => 'Anti-IL-23(p19)', 'dsub' => 'Risankizumab etc.', 'cc' => '#ee7722', 'ck' => 'il23_il17', 'cellKey' => null],
-        ['x' => 370, 'cells' => 'pDC', 'icon' => "\u2726", 'cyt' => "IFN-\u03B1", 'rec' => 'IFNAR1/2', 'jak' => 'JAK1 + TYK2', 'stat' => 'STAT1/2', 'target' => 'ISG-Expression', 'drug' => 'TYK2i / Anti-IFNAR', 'dsub' => 'Deucravacitinib', 'cc' => '#dd5500', 'ck' => 'ifn_pathway', 'cellKey' => 'dc'],
-        ['x' => 465, 'cells' => 'Th1', 'icon' => "\u2694", 'cyt' => "IFN-\u03B3", 'rec' => "IFN-\u03B3R", 'jak' => 'JAK1 + JAK2', 'stat' => 'STAT1', 'target' => 'Makr.-Aktivierung', 'drug' => 'JAK1i', 'dsub' => 'Upadacitinib', 'cc' => '#4488ff', 'ck' => 'jak1', 'cellKey' => 'th1'],
-        ['x' => 560, 'cells' => 'Th2', 'icon' => "\xF0\x9F\x9B\xA1", 'cyt' => 'IL-4 / IL-13', 'rec' => "IL-4R\u03B1 / \u03B3c", 'jak' => 'JAK1 + JAK3', 'stat' => 'STAT6', 'target' => 'IgE-Switch', 'drug' => 'Dupilumab', 'dsub' => "Anti-IL-4R\u03B1", 'cc' => '#44cc77', 'ck' => 'th2', 'cellKey' => 'th2'],
-        ['x' => 655, 'cells' => 'Th17', 'icon' => "\xF0\x9F\x94\xA5", 'cyt' => 'IL-17A/F', 'rec' => 'IL-17RA/RC', 'jak' => "ACT1\u2192NF-\u03BAB", 'stat' => "NF-\u03BAB/MAPK", 'target' => 'Keratinozyten', 'drug' => 'Anti-IL-17A', 'dsub' => 'Secukinumab', 'cc' => '#ee8833', 'ck' => 'il23_il17', 'cellKey' => 'th17'],
-        ['x' => 750, 'cells' => null, 'icon' => null, 'cyt' => 'IL-6', 'rec' => 'IL-6R/gp130', 'jak' => 'JAK1 + JAK2', 'stat' => 'STAT3', 'target' => 'FLS + Osteoklasten', 'drug' => 'Tocilizumab', 'dsub' => 'Anti-IL-6R', 'cc' => '#ffcc33', 'ck' => 'jak2', 'cellKey' => null],
-        ['x' => 845, 'cells' => 'Treg', 'icon' => "\u2696", 'cyt' => 'IL-2', 'rec' => "IL-2R / \u03B3c", 'jak' => 'JAK1 + JAK3', 'stat' => 'STAT5', 'target' => 'T-Proliferation', 'drug' => 'Tofacitinib', 'dsub' => 'JAK1/3i', 'cc' => '#22aa88', 'ck' => 'jak3', 'cellKey' => 'treg'],
-        ['x' => 940, 'cells' => 'B-Zelle', 'icon' => "\xF0\x9F\x92\x8E", 'cyt' => 'BAFF / APRIL', 'rec' => 'BAFF-R/TACI', 'jak' => 'NF-\u03BAB2 / NIK', 'stat' => 'p52 / RelB', 'target' => "B-Zell-\u00DCberleben", 'drug' => 'Rituximab + Belimumab', 'dsub' => 'Anti-CD20+Anti-BAFF', 'cc' => '#9944cc', 'ck' => 'bcell', 'cellKey' => 'bcell'],
-        ['x' => 1040, 'cells' => 'Neutrophil', 'icon' => "\u26A1", 'cyt' => 'RANKL', 'rec' => 'RANK', 'jak' => "TRAF6\u2192NF-\u03BAB", 'stat' => 'NFATc1', 'target' => 'Osteoklasten', 'drug' => 'Denosumab', 'dsub' => 'Anti-RANKL', 'cc' => '#aa6633', 'ck' => 'osteoclast', 'cellKey' => 'neutrophil'],
+        ['x' => 80, 'cells' => $en ? 'Macrophage' : 'Makrophage', 'icon' => "\xF0\x9F\x94\xAC", 'cyt' => "TNF-\u{03B1}", 'rec' => 'TNFR1/2', 'jak' => "TRAF2\u{2192}IKK", 'stat' => "NF-\u{03BA}B", 'target' => 'FLS / Synovium', 'drug' => "Anti-TNF-\u{03B1}", 'dsub' => 'Infliximab etc.', 'cc' => '#ff4444', 'ck' => 'tnf_pathway', 'cellKey' => 'macrophage'],
+        ['x' => 175, 'cells' => 'cDC', 'icon' => "\xF0\x9F\x8C\x9F", 'cyt' => 'IL-12', 'rec' => "IL-12R\u{03B2}1/\u{03B2}2", 'jak' => 'JAK2 + TYK2', 'stat' => 'STAT4', 'target' => $en ? 'Th1 Diff.' : 'Th1-Differenz.', 'drug' => 'Ustekinumab', 'dsub' => 'Anti-IL-12/23', 'cc' => '#ffaa00', 'ck' => 'tyk2', 'cellKey' => 'dc'],
+        ['x' => 270, 'cells' => null, 'icon' => null, 'cyt' => 'IL-23', 'rec' => "IL-23R/12R\u{03B2}1", 'jak' => 'JAK2 + TYK2', 'stat' => 'STAT3/4', 'target' => $en ? 'Th17 Expansion' : 'Th17-Expansion', 'drug' => 'Anti-IL-23(p19)', 'dsub' => 'Risankizumab etc.', 'cc' => '#ee7722', 'ck' => 'il23_il17', 'cellKey' => null],
+        ['x' => 370, 'cells' => 'pDC', 'icon' => "\u{2726}", 'cyt' => "IFN-\u{03B1}", 'rec' => 'IFNAR1/2', 'jak' => 'JAK1 + TYK2', 'stat' => 'STAT1/2', 'target' => $en ? 'ISG Expression' : 'ISG-Expression', 'drug' => 'TYK2i / Anti-IFNAR', 'dsub' => 'Deucravacitinib', 'cc' => '#dd5500', 'ck' => 'ifn_pathway', 'cellKey' => 'dc'],
+        ['x' => 465, 'cells' => 'Th1', 'icon' => "\u{2694}", 'cyt' => "IFN-\u{03B3}", 'rec' => "IFN-\u{03B3}R", 'jak' => 'JAK1 + JAK2', 'stat' => 'STAT1', 'target' => $en ? 'Macr. Activation' : 'Makr.-Aktivierung', 'drug' => 'JAK1i', 'dsub' => 'Upadacitinib', 'cc' => '#4488ff', 'ck' => 'jak1', 'cellKey' => 'th1'],
+        ['x' => 560, 'cells' => 'Th2', 'icon' => "\xF0\x9F\x9B\xA1", 'cyt' => 'IL-4 / IL-13', 'rec' => "IL-4R\u{03B1} / \u{03B3}c", 'jak' => 'JAK1 + JAK3', 'stat' => 'STAT6', 'target' => 'IgE Switch', 'drug' => 'Dupilumab', 'dsub' => "Anti-IL-4R\u{03B1}", 'cc' => '#44cc77', 'ck' => 'th2', 'cellKey' => 'th2'],
+        ['x' => 655, 'cells' => 'Th17', 'icon' => "\xF0\x9F\x94\xA5", 'cyt' => 'IL-17A/F', 'rec' => 'IL-17RA/RC', 'jak' => "ACT1\u{2192}NF-\u{03BA}B", 'stat' => "NF-\u{03BA}B/MAPK", 'target' => $en ? 'Keratinocytes' : 'Keratinozyten', 'drug' => 'Anti-IL-17A', 'dsub' => 'Secukinumab', 'cc' => '#ee8833', 'ck' => 'il23_il17', 'cellKey' => 'th17'],
+        ['x' => 750, 'cells' => null, 'icon' => null, 'cyt' => 'IL-6', 'rec' => 'IL-6R/gp130', 'jak' => 'JAK1 + JAK2', 'stat' => 'STAT3', 'target' => $en ? 'FLS + Osteoclasts' : 'FLS + Osteoklasten', 'drug' => 'Tocilizumab', 'dsub' => 'Anti-IL-6R', 'cc' => '#ffcc33', 'ck' => 'jak2', 'cellKey' => null],
+        ['x' => 845, 'cells' => 'Treg', 'icon' => "\u{2696}", 'cyt' => 'IL-2', 'rec' => "IL-2R / \u{03B3}c", 'jak' => 'JAK1 + JAK3', 'stat' => 'STAT5', 'target' => $en ? 'T Proliferation' : 'T-Proliferation', 'drug' => 'Tofacitinib', 'dsub' => 'JAK1/3i', 'cc' => '#22aa88', 'ck' => 'jak3', 'cellKey' => 'treg'],
+        ['x' => 940, 'cells' => $en ? 'B Cell' : 'B-Zelle', 'icon' => "\xF0\x9F\x92\x8E", 'cyt' => 'BAFF / APRIL', 'rec' => 'BAFF-R/TACI', 'jak' => "NF-\u{03BA}B2 / NIK", 'stat' => 'p52 / RelB', 'target' => $en ? 'B Cell Survival' : "B-Zell-\u{00DC}berleben", 'drug' => 'Rituximab + Belimumab', 'dsub' => 'Anti-CD20+Anti-BAFF', 'cc' => '#9944cc', 'ck' => 'bcell', 'cellKey' => 'bcell'],
+        ['x' => 1040, 'cells' => 'Neutrophil', 'icon' => "\u{26A1}", 'cyt' => 'RANKL', 'rec' => 'RANK', 'jak' => "TRAF6\u{2192}NF-\u{03BA}B", 'stat' => 'NFATc1', 'target' => $en ? 'Osteoclasts' : 'Osteoklasten', 'drug' => 'Denosumab', 'dsub' => 'Anti-RANKL', 'cc' => '#aa6633', 'ck' => 'osteoclast', 'cellKey' => 'neutrophil'],
     ];
 }
 
@@ -165,35 +166,35 @@ function get_biologics(string $lang): array
 {
     if ($lang === 'en') {
         return [
-            ['t' => "TNF-\u03B1", 'd' => 'Infliximab, Adalimumab, Etanercept, Certolizumab, Golimumab', 'i' => 'RA, PsA, Pso, SpA, IBD', 'r' => 'Paradoxical psoriasis (2-5%), TB reactivation, Lupus-like', 'c' => '#ff4444'],
-            ['t' => 'IL-6R', 'd' => 'Tocilizumab, Sarilumab', 'i' => 'RA, JIA, Giant cell arteritis', 'r' => "Neutropenia, liver enzymes\u2191", 'c' => '#ffcc33'],
+            ['t' => "TNF-\u{03B1}", 'd' => 'Infliximab, Adalimumab, Etanercept, Certolizumab, Golimumab', 'i' => 'RA, PsA, Pso, SpA, IBD', 'r' => 'Paradoxical psoriasis (2-5%), TB reactivation, Lupus-like', 'c' => '#ff4444'],
+            ['t' => 'IL-6R', 'd' => 'Tocilizumab, Sarilumab', 'i' => 'RA, JIA, Giant cell arteritis', 'r' => "Neutropenia, liver enzymes\u{2191}", 'c' => '#ffcc33'],
             ['t' => 'IL-23(p19)', 'd' => 'Risankizumab, Guselkumab, Tildrakizumab', 'i' => "Pso, PsA, Crohn's", 'r' => 'Good safety profile', 'c' => '#ee7722'],
             ['t' => 'IL-12/23(p40)', 'd' => 'Ustekinumab', 'i' => 'Pso, PsA, IBD', 'r' => 'Well tolerated', 'c' => '#ffaa00'],
             ['t' => 'IL-17A', 'd' => 'Secukinumab, Ixekizumab', 'i' => 'Pso, PsA, SpA', 'r' => 'Candida infections, possible IBD worsening', 'c' => '#dd7722'],
-            ['t' => "IL-4R\u03B1", 'd' => 'Dupilumab', 'i' => 'AD, Asthma, CRSwNP', 'r' => 'Conjunctivitis', 'c' => '#44cc77'],
+            ['t' => "IL-4R\u{03B1}", 'd' => 'Dupilumab', 'i' => 'AD, Asthma, CRSwNP', 'r' => 'Conjunctivitis', 'c' => '#44cc77'],
             ['t' => 'JAK1', 'd' => 'Upadacitinib, Filgotinib, Abrocitinib', 'i' => 'RA, AD, PsA, SpA, IBD', 'r' => 'Herpes zoster, CV risk (FDA Warning)', 'c' => '#4488ff'],
             ['t' => 'JAK1/2', 'd' => 'Baricitinib, Ruxolitinib', 'i' => 'RA, AD, Alopecia areata, Myelofibrosis', 'r' => 'Anemia, Thrombocytopenia, VTE', 'c' => '#22bb55'],
             ['t' => 'JAK1/3', 'd' => 'Tofacitinib', 'i' => 'RA, PsA, IBD', 'r' => 'MACE+Malignancies >65y (Black Box Warning)', 'c' => '#9955cc'],
             ['t' => 'TYK2', 'd' => 'Deucravacitinib', 'i' => 'Psoriasis', 'r' => 'Best JAKi safety profile', 'c' => '#11aa99'],
-            ['t' => 'CD20', 'd' => 'Rituximab, Ocrelizumab', 'i' => "RA, SLE, Sj\u00F6gren's, MS", 'r' => 'PML (rare), Hypogammaglobulinemia', 'c' => '#9944cc'],
-            ['t' => 'BAFF', 'd' => 'Belimumab, Ianalumab', 'i' => "SLE, Sj\u00F6gren's", 'r' => 'Infections', 'c' => '#aa44cc'],
+            ['t' => 'CD20', 'd' => 'Rituximab, Ocrelizumab', 'i' => "RA, SLE, Sj\u{00F6}gren's, MS", 'r' => 'PML (rare), Hypogammaglobulinemia', 'c' => '#9944cc'],
+            ['t' => 'BAFF', 'd' => 'Belimumab, Ianalumab', 'i' => "SLE, Sj\u{00F6}gren's", 'r' => 'Infections', 'c' => '#aa44cc'],
             ['t' => 'IFNAR', 'd' => 'Anifrolumab', 'i' => 'SLE', 'r' => 'Herpes zoster', 'c' => '#dd5500'],
         ];
     }
 
     return [
-        ['t' => "TNF-\u03B1", 'd' => 'Infliximab, Adalimumab, Etanercept, Certolizumab, Golimumab', 'i' => 'RA, PsA, Pso, SpA, CED', 'r' => 'Paradoxe Psoriasis (2-5%), TB-Reaktivierung, Lupus-like', 'c' => '#ff4444'],
-        ['t' => 'IL-6R', 'd' => 'Tocilizumab, Sarilumab', 'i' => 'RA, JIA, Riesenzellarteriitis', 'r' => "Neutropenie, Leberenzym\u2191", 'c' => '#ffcc33'],
+        ['t' => "TNF-\u{03B1}", 'd' => 'Infliximab, Adalimumab, Etanercept, Certolizumab, Golimumab', 'i' => 'RA, PsA, Pso, SpA, CED', 'r' => 'Paradoxe Psoriasis (2-5%), TB-Reaktivierung, Lupus-like', 'c' => '#ff4444'],
+        ['t' => 'IL-6R', 'd' => 'Tocilizumab, Sarilumab', 'i' => 'RA, JIA, Riesenzellarteriitis', 'r' => "Neutropenie, Leberenzym\u{2191}", 'c' => '#ffcc33'],
         ['t' => 'IL-23(p19)', 'd' => 'Risankizumab, Guselkumab, Tildrakizumab', 'i' => 'Pso, PsA, M.Crohn', 'r' => 'Gutes Sicherheitsprofil', 'c' => '#ee7722'],
-        ['t' => 'IL-12/23(p40)', 'd' => 'Ustekinumab', 'i' => 'Pso, PsA, CED', 'r' => "Gut vertr\u00E4glich", 'c' => '#ffaa00'],
-        ['t' => 'IL-17A', 'd' => 'Secukinumab, Ixekizumab', 'i' => 'Pso, PsA, SpA', 'r' => "Candida-Infektionen, CED-Verschlechterung m\u00F6glich", 'c' => '#dd7722'],
-        ['t' => "IL-4R\u03B1", 'd' => 'Dupilumab', 'i' => 'AD, Asthma, CRSwNP', 'r' => 'Konjunktivitis', 'c' => '#44cc77'],
+        ['t' => 'IL-12/23(p40)', 'd' => 'Ustekinumab', 'i' => 'Pso, PsA, CED', 'r' => "Gut vertr\u{00E4}glich", 'c' => '#ffaa00'],
+        ['t' => 'IL-17A', 'd' => 'Secukinumab, Ixekizumab', 'i' => 'Pso, PsA, SpA', 'r' => "Candida-Infektionen, CED-Verschlechterung m\u{00F6}glich", 'c' => '#dd7722'],
+        ['t' => "IL-4R\u{03B1}", 'd' => 'Dupilumab', 'i' => 'AD, Asthma, CRSwNP', 'r' => 'Konjunktivitis', 'c' => '#44cc77'],
         ['t' => 'JAK1', 'd' => 'Upadacitinib, Filgotinib, Abrocitinib', 'i' => 'RA, AD, PsA, SpA, CED', 'r' => 'Herpes Zoster, KV-Risiko (FDA Warning)', 'c' => '#4488ff'],
-        ['t' => 'JAK1/2', 'd' => 'Baricitinib, Ruxolitinib', 'i' => 'RA, AD, Alopecia areata, Myelofibrose', 'r' => "An\u00E4mie, Thrombozytopenie, VTE", 'c' => '#22bb55'],
+        ['t' => 'JAK1/2', 'd' => 'Baricitinib, Ruxolitinib', 'i' => 'RA, AD, Alopecia areata, Myelofibrose', 'r' => "An\u{00E4}mie, Thrombozytopenie, VTE", 'c' => '#22bb55'],
         ['t' => 'JAK1/3', 'd' => 'Tofacitinib', 'i' => 'RA, PsA, CED', 'r' => 'MACE+Malignome >65J (Black Box Warning)', 'c' => '#9955cc'],
         ['t' => 'TYK2', 'd' => 'Deucravacitinib', 'i' => 'Psoriasis', 'r' => 'Bestes JAKi-Sicherheitsprofil', 'c' => '#11aa99'],
-        ['t' => 'CD20', 'd' => 'Rituximab, Ocrelizumab', 'i' => "RA, SLE, Sj\u00F6gren, MS", 'r' => "PML (selten), Hypogammaglobulin\u00E4mie", 'c' => '#9944cc'],
-        ['t' => 'BAFF', 'd' => 'Belimumab, Ianalumab', 'i' => "SLE, Sj\u00F6gren", 'r' => 'Infektionen', 'c' => '#aa44cc'],
+        ['t' => 'CD20', 'd' => 'Rituximab, Ocrelizumab', 'i' => "RA, SLE, Sj\u{00F6}gren, MS", 'r' => "PML (selten), Hypogammaglobulin\u{00E4}mie", 'c' => '#9944cc'],
+        ['t' => 'BAFF', 'd' => 'Belimumab, Ianalumab', 'i' => "SLE, Sj\u{00F6}gren", 'r' => 'Infektionen', 'c' => '#aa44cc'],
         ['t' => 'IFNAR', 'd' => 'Anifrolumab', 'i' => 'SLE', 'r' => 'Herpes Zoster', 'c' => '#dd5500'],
     ];
 }
@@ -228,7 +229,7 @@ function get_sources(string $lang): array
             'Tran CN et al. Front Med. 2020;7:124.',
             'Norton S et al. Large joints are progressively involved in RA. Rheumatol Int. 2022;42:1053-1061.',
             'Kraan MC et al. Comparison of synovial tissues from knee and small joints. Arthritis Rheum. 2002;46(8):2034-2038.',
-            "He J et al. Characteristics of Sj\u00F6gren's in RA. Rheumatology. 2013;52:1084-1089.",
+            "He J et al. Characteristics of Sj\u{00F6}gren's in RA. Rheumatology. 2013;52:1084-1089.",
         ]],
         ['c' => ($lang === 'en' ? "Sjögren's Syndrome & B Cells" : 'Sjögren-Syndrom & B-Zellen'), 'r' => [
             'Wang Y et al. Front Immunol. 2021;12:684999.',
@@ -236,7 +237,7 @@ function get_sources(string $lang): array
             'Fisher BA et al. Rheumatology. 2021;60(vi):vi53-vi63.',
             'Pers JO et al. Arthritis Rheum. 2007;56(5):1464-1477.',
             'Cornec D et al. J Autoimmun. 2012;39(3):161-167.',
-            "Andrianopoulou A et al. Musculoskeletal manifestations in Sj\u00F6gren's. Int J Mol Sci. 2021;22(8):3754.",
+            "Andrianopoulou A et al. Musculoskeletal manifestations in Sj\u{00F6}gren's. Int J Mol Sci. 2021;22(8):3754.",
         ]],
         ['c' => ($lang === 'en' ? 'Atopic Dermatitis' : 'Atopische Dermatitis'), 'r' => [
             'Langan SM et al. Lancet. 2020;396:345-360.',

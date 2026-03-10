@@ -293,18 +293,16 @@ $isDark = ($theme === THEME_DARK);
     let vx, vy, vw, vh;
 
     function fitInitial() {
-        // Show content at 150% size (viewBox smaller = content appears larger)
+        const ZOOM = 1.36;
         const wrapRect = wrap.getBoundingClientRect();
         const aspect = wrapRect.width / wrapRect.height;
         const contentAspect = CW / CH;
 
         if (aspect > contentAspect) {
-            // Container is wider than content → height-constrained
-            vh = CH / 1.5;
+            vh = CH / ZOOM;
             vw = vh * aspect;
         } else {
-            // Container is taller → width-constrained
-            vw = CW / 1.5;
+            vw = CW / ZOOM;
             vh = vw / aspect;
         }
         // Center on the content
